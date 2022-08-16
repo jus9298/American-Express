@@ -10,13 +10,13 @@ base model 만들기 - class link[링크](https://ldjwj.github.io/ML_Basic_Class
 
 ---
 
-##Overview
+## Overview
 
-###Description
+### Description
 
 * 세계 최대 결제카드 발행사인 아메리칸 익스프레스의 고객 신용거래 채무 불이행 예측
 
-###Evaluation
+### Evaluation
 
 * 평가지표 M = 정규화된 지니계수 G 와 기본비율 4% D 의 평균
 * 4%의 기본비율은 예측의 가장 높은 4%에서의 positive 레이블의 백분율(%). 민감도/호출 통계에 해당.
@@ -25,37 +25,46 @@ base model 만들기 - class link[링크](https://ldjwj.github.io/ML_Basic_Class
 * 이 metric의 계산을 위한 파이썬 코드는 노트북에 제공됨
 * Submission file : 테스트 셋에 있는 고객 아이디에 대해 타겟 값의 확률을 예측해야 함. 파일은 다음과 같은 헤더와 포멧을 포함한다.
 * customer_ID,prediction
-00000469ba...,0.01
-00001bf2e7...,0.22
-0000210045...,0.98
-etc.
+
+  00000469ba...,0.01
+  
+  00001bf2e7...,0.22
+  
+  0000210045...,0.98
+  210046.
+  etc.
 
 ---
 
-##Data Description
+## Data Description
 
-The objective of this competition is to predict the probability that a customer does not pay back their credit card balance amount in the future based on their monthly customer profile. The target binary variable is calculated by observing 18 months performance window after the latest credit card statement, and if the customer does not pay due amount in 120 days after their latest statement date it is considered a default event.
+고객의 월별 프로필을 바탕으로 향후 신용카드 잔액 등을 갚지 않을 확률을 예측.
+타겟 바이너리 변수는 최근 신용카드 내역 이후 18개월간 사용을 관찰하며, 고객이 가장 최근의 내역서 날짜 이후 120일 이내에 만기 금액을 지불하지 않으면 채무 불이행으로 간주한다.
 
-The dataset contains aggregated profile features for each customer at each statement date. Features are anonymized and normalized, and fall into the following general categories:
+데이터셋은 각 내역 날짜에 각 고객의 프로필 특성을 종합한 것이 포함되어 있다. 
+득성은 익명화, 정규화되었으며 다음과 같은 일반적인 카테고리로 분류된다.
 
-D_* = Delinquency variables
-S_* = Spend variables
-P_* = Payment variables
-B_* = Balance variables
-R_* = Risk variables
-with the following features being categorical:
+* D_* = 연체 변수 (Delinquency variables)
+* S_* = 지출 변수 (Spend variables)
+* P_* = 지급 변수 (Payment variables)
+* B_* = 균형 변수 (Balance variables)
+* R_* = 위험 변수 (Risk variables)
 
-['B_30', 'B_38', 'D_114', 'D_116', 'D_117', 'D_120', 'D_126', 'D_63', 'D_64', 'D_66', 'D_68']
+(*다음과 같은 범주형 피쳐. ['B_30', 'B_38', 'D_114', 'D_116', 'D_117', 'D_120', 'D_126', 'D_63', 'D_64', 'D_66', 'D_68'])
 
-Your task is to predict, for each customer_ID, the probability of a future payment default (target = 1).
+### 참가자가 각각의 고객 아이디에 대해 예측할 것 : 미래의 채무 불이행 가능성 (target=1)
 
-Note that the negative class has been subsampled for this dataset at 5%, and thus receives a 20x weighting in the scoring metric.
+negative class는 5%로 이 데이터셋에 대해 다운샘플링되어 scoring metric에서 가중치20
 
-Files
-train_data.csv - training data with multiple statement dates per customer_ID
-train_labels.csv - target label for each customer_ID
-test_data.csv - corresponding test data; your objective is to predict the target label for each customer_ID
+### Files
+
+train_data.csv - 각 고객 아이디의 여러 내역 날짜를 가지고 있는 훈련 데이터
+train_labels.csv - 각 고객 아이디에 대한 타겟 레이블
+test_data.csv - 해당하는 테스트 데이터 : corresponding test data; your objective is to predict the target label for each customer_ID
 sample_submission.csv - a sample submission file in the correct format
-kaggle competitions download -c amex-default-prediction
-Use the Kaggle API to download the dataset.
-https://github.com/Kaggle/kaggle-api
+
+
+
+
+
+
