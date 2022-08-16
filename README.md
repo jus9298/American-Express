@@ -12,11 +12,11 @@ base model 만들기 - class link[링크](https://ldjwj.github.io/ML_Basic_Class
 
 ##Overview
 
-#Description
+###Description
 
 * 세계 최대 결제카드 발행사인 아메리칸 익스프레스의 고객 신용거래 채무 불이행 예측
 
-#Evaluation
+###Evaluation
 
 * 평가지표 M = 정규화된 지니계수 G 와 기본비율 4% D 의 평균
 * 4%의 기본비율은 예측의 가장 높은 4%에서의 positive 레이블의 백분율(%). 민감도/호출 통계에 해당.
