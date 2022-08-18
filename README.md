@@ -45,7 +45,7 @@ base model 만들기 - class link[링크](https://ldjwj.github.io/ML_Basic_Class
 득성은 익명화, 정규화되었으며 다음과 같은 일반적인 카테고리로 분류된다.
 
 * D_* = 연체 변수 (Delinquency variables)
-* S_* = 지출 변수 (Spend variables)
+* S_* = 지출 변수 (Spend variables) 
 * P_* = 지급 변수 (Payment variables)
 * B_* = 균형 변수 (Balance variables)
 * R_* = 위험 변수 (Risk variables)
@@ -58,12 +58,45 @@ negative class는 5%로 이 데이터셋에 대해 다운샘플링되어 scoring
 
 ### Files
 
-train_data.csv - 각 고객 아이디의 여러 내역 날짜를 가지고 있는 훈련 데이터
-train_labels.csv - 각 고객 아이디에 대한 타겟 레이블
-test_data.csv - 해당하는 테스트 데이터 : corresponding test data; your objective is to predict the target label for each customer_ID
-sample_submission.csv - a sample submission file in the correct format
+* train_data.csv - 각 고객 아이디의 여러 내역 날짜를 가지고 있는 훈련 데이터
+
+  컬럼 : customer_ID, S_2(날짜) - 월별 명세서 (Monthly Statement date)
+
+* test_data.csv - 해당하는 테스트 데이터 
+
+* train_labels.csv - 각 고객 아이디에 대한 타겟 레이블
+
+  컬럼 : customer_ID, target값(0과 1로 분류됨.)
+  
+* sample_submission.csv - 올바른 형식의 샘플 제출파일
+
+  컬럼 : customer_ID, prediction(0인 상태.)
+
+___
+
+## Discussion
 
 
+
+
+
+
+
+
+
+___
+
+train_data 16.39GB
+  
+test_data 32.82GB
+  
+train_labels 30.75MB
+  
+sample_submission 61.95MB
+  
+### 총 50.32 GB
+
+## 데이터 사이즈 줄이기
 
 
 
