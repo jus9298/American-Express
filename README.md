@@ -76,13 +76,13 @@ ___
 
 ## Discussion
 
+Feature 'S_2' (Monthly Statement date): initial analysis and engineering
+ - [링크](https://www.kaggle.com/competitions/amex-default-prediction/discussion/329467)
 
 
 
-
-
-
-
+https://www.kaggle.com/competitions/amex-default-prediction/discussion/328565
+https://www.kaggle.com/code/swimmy/tuffline-amex-anotherfeaturelgbm
 
 ___
 
